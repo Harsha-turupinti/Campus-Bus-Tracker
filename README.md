@@ -1,24 +1,53 @@
 # Campus Bus Tracker
 
-A modern React frontend scaffold for campus bus tracking.
+Campus Bus Tracker is a full-stack web application that enables students to track their assigned college bus in real time.
 
-## Quick start
+## Features
 
-```bash
-npm install
-npm run dev
-```
+- Student Login using College Email
+- Live Bus Tracking on Interactive Map
+- Route Visualization using Leaflet
+- Assigned Bus & Driver Information
+- Boarding Point Tracking
+- ETA Monitoring
+- Delay Notifications
+- Real-Time Location Updates
+- GPS Integration Ready Architecture
+- Bus Movement Simulation for Demonstration
 
-## Project structure
+## Tech Stack
 
-- `src/components` — reusable UI pieces
-- `src/pages` — page views for students and admin
-- `src/layouts` — shared layout wrappers
-- `src/routes` — React Router setup
-- `src/services` — dummy data and API helpers
-- `src/context` — global application context
+### Frontend
+- React.js
+- Tailwind CSS
+- React Leaflet
 
-## Notes
+### Backend
+- Node.js
+- Express.js
+- REST APIs
 
-- Uses Tailwind CSS with glassmorphism styling.
-- Includes React Leaflet live tracking and Chart.js analytics.
+### Database
+- MySQL
+
+## System Workflow
+
+Student Login
+→ Dashboard Request
+→ Backend API
+→ MySQL Database
+→ Bus Information Response
+→ Live Map Tracking
+
+## Future Enhancements
+
+- Real GPS Device Integration
+- Mobile Application
+- Push Notifications
+- AI-Based ETA Prediction
+- Driver Application
+- Admin Dashboard
+
+## Project Status
+
+🚀 Active Development
