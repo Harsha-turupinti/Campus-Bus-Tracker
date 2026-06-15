@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base ──────────────────────────────────────────── */
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  scroll-behavior: smooth;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-slate-950 text-slate-100 antialiased;
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+html.light body {
+  @apply bg-gray-50 text-slate-900;
+  color-scheme: light;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ── Glassmorphism Cards ──────────────────────────── */
+.glass {
+  @apply transition-all duration-300;
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+}
+
+.glass:hover {
+  border-color: rgba(148, 163, 184, 0.18);
+}
+
+.light .glass {
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(51, 65, 85, 0.12);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+}
+
+.light .glass:hover {
+  border-color: rgba(51, 65, 85, 0.22);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+
+/* ── Scrollbar Styling ────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.5);
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.2);
+}
+
+/* ── Focus Styles ─────────────────────────────────── */
+input:focus,
+button:focus-visible {
+  outline: 2px solid rgba(6, 182, 212, 0.5);
+  outline-offset: 2px;
+}
+
+/* ── Custom Utilities ─────────────────────────────── */
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #06b6d4, #3b82f6, #8b5cf6);
+  }
+
+  .text-gradient-warm {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #10b981, #06b6d4);
+  }
+
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .bg-dot-pattern {
+    background-image: radial-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.15), 0 0 60px rgba(6, 182, 212, 0.05);
+  }
+
+  .glow-emerald {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.15), 0 0 60px rgba(16, 185, 129, 0.05);
+  }
+}
+
+/* ── Light Mode Transitions ───────────────────────── */
+.light *:not(script):not(style) {
+  @apply transition-colors duration-300;
+}
+
+/* ── Leaflet Map Overrides ────────────────────────── */
+.leaflet-container {
+  font-family: 'Inter', sans-serif !important;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 16px !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3) !important;
+}
+
+.leaflet-popup-tip {
+  box-shadow: none !important;
+}
+
+.custom-bus-marker {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* ── Selection Colors ─────────────────────────────── */
+::selection {
+  background: rgba(6, 182, 212, 0.3);
+  color: white;
+}
+
+.light ::selection {
+  background: rgba(6, 182, 212, 0.2);
+  color: inherit;
+}
+
+/* ── Light Mode Contrast Overrides ────────────────── */
+.light .text-slate-400,
+.light .text-slate-500 {
+  @apply text-slate-600 !important;
+}
+
+.light .text-cyan-400 {
+  @apply text-cyan-600 !important;
+}
+
+.light .text-emerald-400 {
+  @apply text-emerald-600 !important;
+}
+
+.light .text-blue-400 {
+  @apply text-blue-600 !important;
+}
+
+.light .text-amber-400 {
+  @apply text-amber-600 !important;
+}
+
+.light .text-red-400 {
+  @apply text-red-600 !important;
+}
+
+.light .text-purple-400 {
+  @apply text-purple-600 !important;
+}
